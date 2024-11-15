@@ -1,4 +1,4 @@
-// Selecting elements
+// To selecting the elements
 const display = document.getElementById('display');
 const buttons = document.querySelectorAll('.btn');
 
@@ -11,19 +11,19 @@ buttons.forEach(button => {
     button.addEventListener('click', () => {
         const value = button.textContent;
 
-        // Add glowing effect on button press
+        // To add glowing effect on button press
         button.classList.add('glow');
         setTimeout(() => button.classList.remove('glow'), 300);
 
         if (!isNaN(value)) {
-            // Handle number input
+            // To handle number input
             currentInput += value;
             updateDisplay(currentInput);
         } else if (value === 'C') {
-            // Clear inputs
+            // For clear inputs
             clearCalculator();
         } else if (value === '=') {
-            // Perform calculation
+            // TO perform calculation
             if (currentInput && previousInput && operator) {
                 const result = calculate(previousInput, operator, currentInput);
                 updateDisplay(result);
@@ -43,7 +43,7 @@ buttons.forEach(button => {
     });
 });
 
-// Update the display
+// For update the display
 function updateDisplay(value) {
     display.textContent = value;
     // Add a futuristic animation
@@ -54,7 +54,7 @@ function updateDisplay(value) {
     }, 200);
 }
 
-// Perform the calculation
+// To perform the calculation
 function calculate(num1, operator, num2) {
     const a = parseFloat(num1);
     const b = parseFloat(num2);
@@ -73,7 +73,7 @@ function calculate(num1, operator, num2) {
     }
 }
 
-// Clear calculator state
+// To clear calculator state
 function clearCalculator() {
     currentInput = '';
     previousInput = '';
